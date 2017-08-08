@@ -36,12 +36,12 @@ render();
   args:
     cursor: Integer, points to emails being fetched. Defaults to the beginning.
 
-    callback: Function with args (result, next)
+    callback: Function with args ({result, next})
       result: emails that were fetched from this call
       next: cursor pointing to the next page of results,
             or null if there are no more results.
 */
-function fetchEmailsFromDatabase({ cursor = 0, callback }) {
+function fetchEmailsFromDatabase(cursor = 0, callback) {
   const emails = [
     {
       author: 'Bobby Bob',
