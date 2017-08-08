@@ -1,12 +1,15 @@
 /*
-  TODO:
-  1. Grab all emails using fetchEmailsFromDatabase. (HINT: make use of nextPage)
-  2. Run the fetched emails through getFilteredEmails
-  3. Implement getFilteredEmails
+  TODOs:
+  1. Grab all emails using fetchEmailsFromDatabase
+  2. Implement and run the fetched emails through getFilteredEmails
+
+  HINTs:
+  1. Read "fetchEmailsFromDatabase" carefully and make use of "cursor" and "next"
+  2. Paging scheme is reminiscent of standard APIs
 */
 
 function render() {
-  // Your Code Here
+  // TODO 1: Your Code Here
 }
 
 /*
@@ -22,17 +25,22 @@ function render() {
 */
 
 function getFilteredEmails(allEmails = [], searchInputs = getSearchInputs()) {
-  // Your Code Here
+  // TODO 2: Your Code Here
 }
 
-//  ------------ Do Not Make Changes Below This Line ------------
+render();
+
+//  ------------ Read But Do Not Make Changes Below This Line ------------
 
 /*
   args:
-    params: Object, { page: Integer }, the current page of emails being fetched from database
-    callback: Function, with signature (error, result) from the database
+    cursor: Integer, points to emails being fetched. Defaults to the beginning.
+
+    callback: Function with args (result, next)
+      result: emails that were fetched from this call
+      next: cursor pointing to the next page of results
 */
-function fetchEmailsFromDatabase(params = { page: 0 }, callback) {
+function fetchEmailsFromDatabase({ cursor = 0, callback }) {
   const emails = [
     {
       author: 'Bobby Bob',
@@ -72,13 +80,13 @@ function fetchEmailsFromDatabase(params = { page: 0 }, callback) {
   ];
 
   setTimeout(() => {
-    const page = params.page;
-    const nextPage = Math.min(page + _.random(1, 3), emails.length);
-    const fetchedEmails = _.slice(emails, page, nextPage);
+    const last = emails.length;
+    const next = Math.min(cursor + _.random(1, 3), last);
+    const fetchedEmails = _.slice(emails, cursor, next);
 
-    callback(null, {
-      emails: fetchedEmails,
-      nextPage: page !== emails.length ? page : null,
+    callback({
+      result: fetchedEmails,
+      next: cursor === last ? null : next,
     });
   }, 100);
 }
@@ -104,5 +112,3 @@ function getSearchInputs() {
     'product is the best',
   ];
 }
-
-render();
