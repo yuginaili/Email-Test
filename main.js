@@ -4,8 +4,8 @@
   2. Implement and run the fetched emails through getFilteredEmails
 
   HINTs:
-  1. Read "fetchEmailsFromDatabase" carefully and make use of "cursor" and "next"
-  2. Paging scheme is reminiscent of standard APIs
+  1. Read documentation for "fetchEmailsFromDatabase" carefully
+  2. Make use of "cursor" and "next" like paging results from APIs
 */
 
 function render() {
@@ -38,7 +38,8 @@ render();
 
     callback: Function with args (result, next)
       result: emails that were fetched from this call
-      next: cursor pointing to the next page of results
+      next: cursor pointing to the next page of results,
+            or null if there are no more results.
 */
 function fetchEmailsFromDatabase({ cursor = 0, callback }) {
   const emails = [
