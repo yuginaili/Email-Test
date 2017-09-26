@@ -1,0 +1,24 @@
+{
+  "name": "Email-Test",
+  "title": "A frontend email client using Grunt",
+  "description": "A frontend email client using Grunt",
+  "version": "0.1.0",
+  "author": {
+    "name": "Yugi Naili",
+    "url": "https://github.com/yuginaili/Email-Test"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-concurrent": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git#harmony",
+    "grunt-contrib-watch": "latest"
+  },
+  "directories": {
+    "scss": "src/scss",
+    "css": "assets/css",
+    "js_dev": "src/js",
+    "js": "assets/js"
+  }
+}

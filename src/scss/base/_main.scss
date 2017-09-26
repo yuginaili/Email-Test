@@ -1,0 +1,135 @@
+/*--------------------------------------*\
+	Main
+\*--------------------------------------*/
+
+html,
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background-color: #1b2224;
+  margin: 0;
+  line-height: 1.43;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.sidebar {
+  height: 100%;
+  min-width: 200px;
+  color: #596468;
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #5B6467;
+    font-weight: 600;
+
+    .sidebar-icon {
+      margin-right: 10px;
+    }
+
+    .sidebar-notification {
+      margin-left: auto;
+      display: block;
+      height: 20px;
+      width: 20px;
+      line-height: 20px;
+      border-radius: 50%;
+      border: #565F62 solid 2px;
+      color: #434B4E;
+      text-align: center;
+      font-size: 11px;
+    }
+  }
+
+  .sidebar-item.active {
+    color: #000;
+    background-color: #FFF;
+    border-left: #C05E45 solid 5px;
+
+    .sidebar-notification {
+      border-radius: 50%;
+      border: #C05E45 solid 1px;
+      background-color: #C05E45;
+      color: #FFF;
+    }
+  }
+
+  .sidebar-divider {
+    padding: 20px 0;
+    margin-top: 15px;
+    border-top: #5B6467 solid 1px;
+  }
+}
+
+.compose-btn {
+  display: flex;
+  background-color: #ce5135;
+  border: none;
+  border-radius: 3px;
+  padding: 0.8em 3em;
+  color: #fff;
+  margin: 3.5em auto;
+  margin-bottom: 2.5em;
+  font-size: 1.05em;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.email-panel {
+  padding: 3em 4em;
+  flex-grow: 1;
+  max-width: 600px;
+  background-color: #fff;
+
+  .email-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .email-header {
+      font-weight: lighter;
+      font-size: 3em;
+      margin: 0;
+      color: #444;
+    }
+
+    .email-search {
+      width: 30%;
+      padding: 7px;
+      border: #DEDEDE solid 2px;
+      text-align: right;
+    }
+  }
+
+  .email-list {
+    margin-top: 2em;
+    padding-top: 2em;
+    border-top: 1px solid #e9eff0;
+  }
+
+  .email-item {
+    border-bottom: 1px solid #e9eff0;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+  }
+
+  .meta-data {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    opacity: 0.5;
+  }
+}
